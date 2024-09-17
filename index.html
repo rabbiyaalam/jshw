@@ -1,0 +1,138 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>JavaScript Function Exercises</title>  
+    <style>  
+        #studentTable {  
+            width: 50%;  
+            margin: 20px 0;  
+            border-collapse: collapse;  
+        }  
+        #studentTable th, #studentTable td {  
+            border: 1px solid black;  
+            padding: 8px;  
+            text-align: center;  
+        }  
+        #studentTable th {  
+            background-color: #f2f2f2;  
+        }  
+    </style>  
+    <script>  
+        // 1. Show an alert box on click on a link  
+        function showAlert() {  
+            alert("You clicked the link!");  
+        }  
+
+        // 2. Display some mobile images and show alert on image click  
+        function showImageAlert(mobileName) {  
+            alert("You clicked on " + mobileName + " image!");  
+        }  
+
+        // 3. Delete a student record from table  
+        function deleteRecord(button) {  
+            const row = button.parentNode.parentNode;  
+            row.parentNode.removeChild(row);  
+        }  
+
+        // 4. Change image on mouseover and mouseout  
+        function changeImageOnMouseOver(img) {  
+            img.src = "https://via.placeholder.com/300/FF5733/FFFFFF?text=New+Image"; // URL for second image  
+        }  
+
+        function changeImageOnMouseOut(img) {  
+            img.src = "https://via.placeholder.com/300/3333FF/FFFFFF?text=Original+Image"; // URL for first image  
+        }  
+
+        // 5. Counter functionality  
+        let counter = 0;  
+
+        function increaseCounter() {  
+            counter++;  
+            document.getElementById("counterValue").innerText = counter;  
+        }  
+
+        function decreaseCounter() {  
+            if (counter > 0) {  
+                counter--;  
+            }  
+            document.getElementById("counterValue").innerText = counter;  
+        }  
+    </script>  
+</head>  
+<body>  
+    <h1>JavaScript Function Exercises</h1>  
+
+    <!-- 1. Alert link -->  
+    <h2>1. Click the link below:</h2>  
+    <a href="#" onclick="showAlert()">Click Me!</a>  
+
+    <!-- 2. Mobile images -->  
+    <h2>2. Mobile Images:</h2>  
+    <img src="https://via.placeholder.com/150/FF5733/FFFFFF?text=Mobile1" alt="Mobile1" onclick="showImageAlert('Mobile1')">  
+    <img src="https://via.placeholder.com/150/33FF57/FFFFFF?text=Mobile2" alt="Mobile2" onclick="showImageAlert('Mobile2')">  
+    <img src="https://via.placeholder.com/150/3357FF/FFFFFF?text=Mobile3" alt="Mobile3" onclick="showImageAlert('Mobile3')">  
+
+    <!-- 3. Student records -->  
+    <h2>3. Student Records:</h2>  
+    <table id="studentTable">  
+        <tr>  
+            <th>Name</th>  
+            <th>Action</th>  
+        </tr>  
+        <tr>  
+            <td>rabi</td>  
+            <td><button onclick="deleteRecord(this)">Delete</button></td>  
+        </tr>  
+        <tr>  
+            <td>kashaf</td>  
+            <td><button onclick="deleteRecord(this)">Delete</button></td>  
+        </tr>  
+        <tr>  
+            <td>Sammiya</td>  
+            <td><button onclick="deleteRecord(this)">Delete</button></td>  
+        </tr>  
+        <tr>  
+            <td>Paras</td>  
+            <td><button onclick="deleteRecord(this)">Delete</button></td>  
+        </tr>  
+        <tr>  
+            <td>Amna</td>  
+            <td><button onclick="deleteRecord(this)">Delete</button></td>  
+        </tr>  
+        <tr>  
+            <td>esha</td>  
+            <td><button onclick="deleteRecord(this)">Delete</button></td>  
+        </tr>  
+        <tr>  
+            <td>Laiba</td>  
+            <td><button onclick="deleteRecord(this)">Delete</button></td>  
+        </tr>  
+        <tr>  
+            <td>Javeria</td>  
+            <td><button onclick="deleteRecord(this)">Delete</button></td>  
+        </tr>  
+        <tr>  
+            <td>Laraib</td>  
+            <td><button onclick="deleteRecord(this)">Delete</button></td>  
+        </tr>  
+        <tr>  
+            <td>nora</td>  
+            <td><button onclick="deleteRecord(this)">Delete</button></td>  
+        </tr>  
+    </table>  
+
+    <!-- 4. Image change on hover -->  
+    <h2>4. Change Image on Mouse Over:</h2>  
+    <img src="https://via.placeholder.com/300/3333FF/FFFFFF?text=Original+Image" alt="Original"   
+         onmouseover="changeImageOnMouseOver(this)"   
+         onmouseout="changeImageOnMouseOut(this)">  
+
+    <!-- 5. Counter functionality -->  
+    <h2>5. Counter:</h2>  
+    <button onclick="decreaseCounter()">Decrease</button>  
+    <span id="counterValue">0</span>  
+    <button onclick="increaseCounter()">Increase</button>  
+</body>  
+</html>
